@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sofiaa53/javascript_api_automation/issues"
   },
-  "homepage": "https://github.com/sofiaa53/javascript_api_automation#readme"
+  "homepage": "https://github.com/sofiaa53/javascript_api_automation#readme",
+  "dependencies": {
+    "webdriverio": "^8.14.3"
+  }
 }
