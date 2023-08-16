@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/sofiaa53/javascript_api_automation#readme",
   "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3",
     "webdriverio": "^8.14.3"
   }
 }
