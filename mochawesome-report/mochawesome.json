@@ -1,0 +1,465 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 11,
+    "passes": 11,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-08-18T15:45:06.366Z",
+    "end": "2023-08-18T15:45:17.481Z",
+    "duration": 11115,
+    "testsRegistered": 11,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2f75a52c-d88c-452f-a7f6-a5feebd38082",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5b416f38-d19f-4f1d-b44f-d343b9137c99",
+          "title": "Create Unit",
+          "fullFile": "C:\\Users\\ASUS\\Documents\\Progamming\\belajar_js\\test\\spec\\Units\\createUnit.spec.js",
+          "file": "\\test\\spec\\Units\\createUnit.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success create a new unit successfully",
+              "fullTitle": "Create Unit Success create a new unit successfully",
+              "timedOut": false,
+              "duration": 756,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n    \"name\": \"gram\",\n    \"description\": \"weight measurement\"\n}\nconst response = await api_call.postUnit(payload, token)\nexpect((await response).status).to.equal(201);\nexpect((await response).body.message).to.eql(\"Unit berhasil ditambahkan\");\nexpect((await response).body).to.include.keys(\"status\", \"message\", \"data\");",
+              "err": {},
+              "uuid": "2767ac6c-b34d-47a5-a23c-b8d3731d8f8c",
+              "parentUUID": "5b416f38-d19f-4f1d-b44f-d343b9137c99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a new unit without fill description",
+              "fullTitle": "Create Unit Create a new unit without fill description",
+              "timedOut": false,
+              "duration": 647,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n    \"name\": \"gram\"\n}\nconst response = await api_call.postUnit(payload, token)\nexpect((await response).status).to.equal(201);\nexpect((await response).body.message).to.eql(\"Unit berhasil ditambahkan\");\nexpect((await response).body).to.include.keys(\"status\", \"message\", \"data\");",
+              "err": {},
+              "uuid": "1db3ffaa-93e3-4242-962d-7da63900095c",
+              "parentUUID": "5b416f38-d19f-4f1d-b44f-d343b9137c99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a new unit without fill name",
+              "fullTitle": "Create Unit Create a new unit without fill name",
+              "timedOut": false,
+              "duration": 694,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n    \"description\": \"weight measurement\"\n}\nconst response = await api_call.postUnit(payload, token)\nexpect((await response).status).to.equal(400);\nexpect((await response).body.message).to.eql(\"name is required, description is optional\");\nexpect((await response).body).to.include.keys(\"status\", \"message\");",
+              "err": {},
+              "uuid": "50e3857d-53d3-4fa3-93b6-d99503f9db93",
+              "parentUUID": "5b416f38-d19f-4f1d-b44f-d343b9137c99",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a new unit without fill name and description",
+              "fullTitle": "Create Unit Create a new unit without fill name and description",
+              "timedOut": false,
+              "duration": 702,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n}\nconst response = await api_call.postUnit(payload, token)\nexpect((await response).status).to.equal(400);\nexpect((await response).body.message).to.eql(\"name is required, description is optional\");\nexpect((await response).body).to.include.keys(\"status\", \"message\");",
+              "err": {},
+              "uuid": "629b4c19-e991-4b9b-b1f7-2ada0c6309b4",
+              "parentUUID": "5b416f38-d19f-4f1d-b44f-d343b9137c99",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2767ac6c-b34d-47a5-a23c-b8d3731d8f8c",
+            "1db3ffaa-93e3-4242-962d-7da63900095c",
+            "50e3857d-53d3-4fa3-93b6-d99503f9db93",
+            "629b4c19-e991-4b9b-b1f7-2ada0c6309b4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2799,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1c24df1e-d81a-4ae5-8bd3-42464b2396e2",
+          "title": "Delete Unit ID",
+          "fullFile": "C:\\Users\\ASUS\\Documents\\Progamming\\belajar_js\\test\\spec\\Units\\deleteUnit.spec.js",
+          "file": "\\test\\spec\\Units\\deleteUnit.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Delete Unit ID\"",
+              "fullTitle": "Delete Unit ID \"before all\" hook in \"Delete Unit ID\"",
+              "timedOut": false,
+              "duration": 685,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst reqBody = unit\nconst createResponse = await api_call.postUnit(reqBody, token)\nexpect((await createResponse).status).to.equal(201);\ncreatedUnitId = await createResponse.body.data.unitId",
+              "err": {},
+              "uuid": "f2615ad9-f22b-428c-82a6-9a2389b62845",
+              "parentUUID": "1c24df1e-d81a-4ae5-8bd3-42464b2396e2",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete unit successfully",
+              "fullTitle": "Delete Unit ID Delete unit successfully",
+              "timedOut": false,
+              "duration": 730,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst getResponse = await api_call.deleteUnit(createdUnitId, token);\nexpect((await getResponse).status).to.equal(200);",
+              "err": {},
+              "uuid": "7386b7c2-b99b-441a-9bcc-84740040c669",
+              "parentUUID": "1c24df1e-d81a-4ae5-8bd3-42464b2396e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7386b7c2-b99b-441a-9bcc-84740040c669"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 730,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a9960a54-92b0-4022-96ca-b940ef55e886",
+          "title": "Get Unit ID",
+          "fullFile": "C:\\Users\\ASUS\\Documents\\Progamming\\belajar_js\\test\\spec\\Units\\getUnitId.spec.js",
+          "file": "\\test\\spec\\Units\\getUnitId.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Get Unit ID\"",
+              "fullTitle": "Get Unit ID \"before all\" hook in \"Get Unit ID\"",
+              "timedOut": false,
+              "duration": 680,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst reqBody = unit\nconst createResponse = await api_call.postUnit(reqBody, token)\nexpect((await createResponse).status).to.equal(201);\ncreatedUnitId = await createResponse.body.data.unitId",
+              "err": {},
+              "uuid": "22837a5b-bb1d-4204-8208-0e2ecdd3121c",
+              "parentUUID": "a9960a54-92b0-4022-96ca-b940ef55e886",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Get Unit ID\"",
+              "fullTitle": "Get Unit ID \"after all\" hook in \"Get Unit ID\"",
+              "timedOut": false,
+              "duration": 680,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst deleteResponse = await api_call.deleteUnit(createdUnitId, token);\nexpect(deleteResponse.status).to.eql(200);",
+              "err": {},
+              "uuid": "fab3c956-620f-43f8-94e7-76e33fbc3d1c",
+              "parentUUID": "a9960a54-92b0-4022-96ca-b940ef55e886",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Get Unit by ID successfully",
+              "fullTitle": "Get Unit ID Get Unit by ID successfully",
+              "timedOut": false,
+              "duration": 670,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst getResponse = await api_call.getUnitById(createdUnitId, token);\nexpect((await getResponse).status).to.equal(200);",
+              "err": {},
+              "uuid": "a503f4db-b7fa-450b-893b-025e8cc9755d",
+              "parentUUID": "a9960a54-92b0-4022-96ca-b940ef55e886",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Enter nonexsit id, response 404",
+              "fullTitle": "Get Unit ID Enter nonexsit id, response 404",
+              "timedOut": false,
+              "duration": 695,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst tempId = 99990;\nconst getResponse = await api_call.getUnitById(tempId, token);\n// Verify getResponse using assertion\nexpect(getResponse.status).to.eql(404);\nexpect(getResponse.text).to.have.string(\"id tidak valid\");",
+              "err": {},
+              "uuid": "bc599258-d781-42fb-a9b2-31d8ef174b12",
+              "parentUUID": "a9960a54-92b0-4022-96ca-b940ef55e886",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a503f4db-b7fa-450b-893b-025e8cc9755d",
+            "bc599258-d781-42fb-a9b2-31d8ef174b12"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1365,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f5183c5b-cf96-4d48-8601-28d2c704238e",
+          "title": "Get Unit List",
+          "fullFile": "C:\\Users\\ASUS\\Documents\\Progamming\\belajar_js\\test\\spec\\Units\\getUnitList.spec.js",
+          "file": "\\test\\spec\\Units\\getUnitList.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get Unit list successfully",
+              "fullTitle": "Get Unit List Get Unit list successfully",
+              "timedOut": false,
+              "duration": 694,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst getResponse = await api_call.getUnitList(token);\nexpect((await getResponse).status).to.equal(200);",
+              "err": {},
+              "uuid": "e6e574c7-a8bd-494f-9e0b-acb70f45c25d",
+              "parentUUID": "f5183c5b-cf96-4d48-8601-28d2c704238e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e6e574c7-a8bd-494f-9e0b-acb70f45c25d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 694,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "eccf57b1-04b6-409c-ac54-2ae4cc4f38ee",
+          "title": "Put Unit",
+          "fullFile": "C:\\Users\\ASUS\\Documents\\Progamming\\belajar_js\\test\\spec\\Units\\putUnit.spec.js",
+          "file": "\\test\\spec\\Units\\putUnit.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Put Unit\"",
+              "fullTitle": "Put Unit \"before all\" hook in \"Put Unit\"",
+              "timedOut": false,
+              "duration": 677,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst reqBody = unit\nconst createResponse = await api_call.postUnit(reqBody, token)\nexpect((await createResponse).status).to.equal(201);\ncreatedUnitId = await createResponse.body.data.unitId",
+              "err": {},
+              "uuid": "3b5a1ef0-56a0-4ffa-92b6-f371272a96c3",
+              "parentUUID": "eccf57b1-04b6-409c-ac54-2ae4cc4f38ee",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Put Unit\"",
+              "fullTitle": "Put Unit \"after all\" hook in \"Put Unit\"",
+              "timedOut": false,
+              "duration": 781,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst deleteResponse = await api_call.deleteUnit(createdUnitId, token);\nexpect(deleteResponse.status).to.eql(200);",
+              "err": {},
+              "uuid": "1a9088c2-13c7-4e92-a1cf-d6a0a11d104d",
+              "parentUUID": "eccf57b1-04b6-409c-ac54-2ae4cc4f38ee",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Change unit name successfully",
+              "fullTitle": "Put Unit Change unit name successfully",
+              "timedOut": false,
+              "duration": 671,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n    \"name\": \"update-meter\",\n    \"description\": \"weight measurement\"\n}\nconst getResponse = await api_call.putUnit(createdUnitId, payload, token);\nexpect((await getResponse).status).to.equal(200);",
+              "err": {},
+              "uuid": "15eecb03-4515-4dc3-8954-546c1405c136",
+              "parentUUID": "eccf57b1-04b6-409c-ac54-2ae4cc4f38ee",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Change description successfully",
+              "fullTitle": "Put Unit Change description successfully",
+              "timedOut": false,
+              "duration": 678,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n    \"name\": \"update-meter\",\n    \"description\": \"description updated successfully\"\n}\nconst getResponse = await api_call.putUnit(createdUnitId, payload, token);\nexpect((await getResponse).status).to.equal(200);",
+              "err": {},
+              "uuid": "faa79335-ad55-4c8d-8b6c-beb5f285794d",
+              "parentUUID": "eccf57b1-04b6-409c-ac54-2ae4cc4f38ee",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Change description successfully without input name",
+              "fullTitle": "Put Unit Change description successfully without input name",
+              "timedOut": false,
+              "duration": 647,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken()\nconst payload = {\n    //\"name\": \"update-meter\",\n    \"description\": \"description updated successfully\"\n}\nconst getResponse = await api_call.putUnit(createdUnitId, payload, token);\nexpect((await getResponse).status).to.equal(400);\nexpect((await getResponse).body.message).to.eql(\"name is required, description is optional\");",
+              "err": {},
+              "uuid": "b55ba4a1-5c8d-4e9e-9643-d332edb0e15f",
+              "parentUUID": "eccf57b1-04b6-409c-ac54-2ae4cc4f38ee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "15eecb03-4515-4dc3-8954-546c1405c136",
+            "faa79335-ad55-4c8d-8b6c-beb5f285794d",
+            "b55ba4a1-5c8d-4e9e-9643-d332edb0e15f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1996,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

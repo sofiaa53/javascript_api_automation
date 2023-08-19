@@ -1,7 +1,7 @@
 const request = require("supertest");
 const { expect } = require("chai");
-const { getToken } = require("./get.token.spec");
-const config  = require('../../data/login.data.json')
+const { getToken } = require("./Auth/get.token.spec");
+const config  = require('../../../data/config.data.json')
 
 async function createUser(payload, token) {
     const response = await request(config.baseUrl)
@@ -25,3 +25,5 @@ describe('Create User', () => {
     })
 
 })
+
+module.exports= {createUser}

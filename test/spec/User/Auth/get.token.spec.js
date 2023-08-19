@@ -1,6 +1,6 @@
 const request = require("supertest");
-const userData = require('../../data/user.data.json')
-const config = require('../../data/login.data.json')
+const userData = require('../../../../data/user.data.json')
+const config = require('../../../../data/config.data.json')
 
 async function getToken() {
     const response = await request(config.baseUrl)
@@ -8,7 +8,7 @@ async function getToken() {
         .send(userData)
 
     const token = await response.body.data.accessToken
-        //console.log((await response.body));
+    //console.log((await response.body));
     return token
 }
 
