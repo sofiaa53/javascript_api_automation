@@ -27,6 +27,7 @@ KasirAja APIs.
 - Traverse to the project directory
 - Open suite folder ```$ cd spec/suite```
 - Run suite ```$ npx mocha {filename}.suite.js```
+- Execution Example [Click Here](https://drive.google.com/file/d/1NHUP5EXpGyhFOn-3mGkOYp93ndUT4YJB/view?usp=sharing)
 
 ## Run Single File
 Sometimes its useful to only execute a single test file, to do so use the following command: <br/>
